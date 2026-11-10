@@ -1,0 +1,12 @@
+PASS: 2 additional series, 6 new dataset benchmark runs; both suites exit 0.
+PASS: 10 real input CSV, 80 rows; 9 principal runs plus 1 smoke.
+PASS: 32 summary groups independently recomputed with sum/n and sum of squares/(n-1).
+PASS: all 24 principal groups have n=3; all 8 smoke groups n=1 and undefined sample SD.
+PASS: seed=42, warmup=50, repetitions=200 throughout.
+PASS: all 6 new SQL/Mongo equivalence checks; no generation or Flyway migration in repeat logs.
+PASS: container IDs, start times and restart counters unchanged; starts predate first CSV.
+PASS: original 4 raw CSV and protected source/AGENTS/benchmark script hashes unchanged.
+PASS: report tables match generated analysis; documentation wording checked.
+PASS: final SVG XML, aggregate labels and whitespace; both plot previews visually reviewed.
+PASS: final source/raw CSV hashes, matching document tables and Python syntax.
+PASS: git diff --check.

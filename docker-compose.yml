@@ -1,0 +1,45 @@
+name: store-lab2
+services:
+  mongo:
+    image: mongo:8.0
+    ports:
+      - "127.0.0.1:${LAB2_MONGO_PORT:-27017}:27017"
+    volumes:
+      - mongo_lab2:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping').ok"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+  redis:
+    image: redis:7.4-alpine
+    ports:
+      - "127.0.0.1:${LAB2_REDIS_PORT:-6379}:6379"
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes:
+      - redis_lab2:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+  postgres-bench:
+    image: postgres:17-alpine
+    profiles: ["bench"]
+    environment:
+      POSTGRES_DB: store_db_benchmark
+      POSTGRES_USER: lab2
+      POSTGRES_PASSWORD: ${LAB2_PG_PASSWORD:-lab2_local_only}
+    ports:
+      - "127.0.0.1:${LAB2_PG_PORT:-55432}:5432"
+    volumes:
+      - postgres_lab2:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U lab2 -d store_db_benchmark"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+volumes:
+  mongo_lab2:
+  redis_lab2:
+  postgres_lab2:

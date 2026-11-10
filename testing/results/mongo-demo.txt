@@ -1,0 +1,31 @@
+ store-lab2-mongo-1 Copying scripts/mongo-demo.js to store-lab2-mongo-1:/tmp/lab2-demo.js
+ store-lab2-mongo-1 Copied scripts/mongo-demo.js to store-lab2-mongo-1:/tmp/lab2-demo.js
+{
+	"_id" : -1,
+	"customer" : {
+		"id" : 1,
+		"name" : "Demo customer"
+	},
+	"employee_id" : 1,
+	"items" : [
+		{
+			"id" : 1,
+			"product_id" : 1,
+			"name" : "Coffee",
+			"quantity" : 1,
+			"unit_price" : NumberDecimal("120.00")
+		}
+	],
+	"order_date" : ISODate("2025-01-01T12:00:00Z"),
+	"payments" : [
+		{
+			"id" : 1,
+			"method" : "CARD",
+			"amount" : NumberDecimal("120.00"),
+			"date" : ISODate("2025-01-01T12:01:00Z")
+		}
+	],
+	"total_amount" : NumberDecimal("120.00"),
+	"demo_note" : "Updated read model example"
+}
+Mongo demo PASS

@@ -1,0 +1,7 @@
+PASS redis-ok exit=0
+PASS redis-native-error exit=1
+PASS redis-server-error exit=1
+PASS redis-late-error exit=1
+PASS mongo-ok exit=0
+PASS mongo-copy-error exit=1
+PASS mongo-shell-error exit=1

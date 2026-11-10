@@ -1,0 +1,11 @@
+# Local teaching fallback for this CPU without AVX. Not for production.
+# A different volume prevents cross-version data-directory reuse.
+services:
+  mongo:
+    image: mongo:4.4.29
+    volumes:
+      - mongo_lab2_noavx:/data/db
+    healthcheck:
+      test: ["CMD", "mongo", "--quiet", "--eval", "db.adminCommand('ping').ok"]
+volumes:
+  mongo_lab2_noavx:

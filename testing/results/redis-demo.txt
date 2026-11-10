@@ -1,0 +1,27 @@
+redis-cli -e --raw -n 15 SET product:1 {"name":"Coffee","price":"120.00"}
+OK
+redis-cli -e --raw -n 15 GET product:1
+{name:Coffee,price:120.00}
+redis-cli -e --raw -n 15 EXISTS product:1
+1
+redis-cli -e --raw -n 15 SET product:1 {"name":"Coffee","price":"125.00"}
+OK
+redis-cli -e --raw -n 15 EXPIRE product:1 120
+1
+redis-cli -e --raw -n 15 TTL product:1
+113
+redis-cli -e --raw -n 15 DEL product:1
+1
+redis-cli -e --raw -n 15 EXISTS product:1
+0
+redis-cli -e --raw -n 15 ZADD popular_products 12 Coffee 8 Tea 5 Chocolate
+0
+redis-cli -e --raw -n 15 ZINCRBY popular_products 3 Tea
+11
+redis-cli -e --raw -n 15 ZRANGE popular_products 0 9 REV WITHSCORES
+Coffee
+12
+Tea
+11
+Chocolate
+5

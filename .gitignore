@@ -31,3 +31,10 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# Local credentials and verification logs
+.env
+.env.*
+!.env.example
+target-lab2-*.log
+scripts/__pycache__/

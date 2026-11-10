@@ -1,0 +1,40 @@
+{
+  "startedUtc": "2026-11-10T12:25:53.0412331Z",
+  "finishedUtc": "2026-11-10T12:37:38.8867659Z",
+  "status": "complete",
+  "command": ".\\scripts\\benchmark.ps1 -Sizes 1000,10000,100000 -Seed 42 -Repeats 200 -Warmup 50 -Reuse",
+  "mavenArgs": "-o",
+  "powerShell": "7.6.9",
+  "containersBefore": [
+    "/store-lab2-mongo-1|f2309e0367989e7cf95a8e8999962642e1dbaf39c0550b4f18344402a819a04a|2026-11-10T10:33:16.033009194Z|0|mongo:4.4.29",
+    "/store-lab2-postgres-bench-1|0f45468506c434a061439d7f34804ebecb927cc75c71657674b429beb2ce6149|2026-11-10T10:23:24.882652664Z|0|postgres:17-alpine"
+  ],
+  "containersAfter": [
+    "/store-lab2-mongo-1|f2309e0367989e7cf95a8e8999962642e1dbaf39c0550b4f18344402a819a04a|2026-11-10T10:33:16.033009194Z|0|mongo:4.4.29",
+    "/store-lab2-postgres-bench-1|0f45468506c434a061439d7f34804ebecb927cc75c71657674b429beb2ce6149|2026-11-10T10:23:24.882652664Z|0|postgres:17-alpine"
+  ],
+  "series": [
+    {
+      "number": 2,
+      "startedUtc": "2026-11-10T12:25:53.8931209Z",
+      "finishedUtc": "2026-11-10T12:34:49.0109360Z",
+      "exitCode": 0,
+      "files": [
+        "benchmark_lab2_n1000_s42_1794313761825.csv",
+        "benchmark_lab2_n10000_s42_1794313878196.csv",
+        "benchmark_lab2_n100000_s42_1794314038651.csv"
+      ]
+    },
+    {
+      "number": 3,
+      "startedUtc": "2026-11-10T12:34:49.4407491Z",
+      "finishedUtc": "2026-11-10T12:37:38.8711520Z",
+      "exitCode": 0,
+      "files": [
+        "benchmark_lab2_n1000_s42_1794314129176.csv",
+        "benchmark_lab2_n10000_s42_1794314167039.csv",
+        "benchmark_lab2_n100000_s42_1794314236340.csv"
+      ]
+    }
+  ]
+}
